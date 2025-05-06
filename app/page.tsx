@@ -74,7 +74,7 @@ export default function Home() {
               <div className="relative">
                 <GlassCard className="p-4 transform -rotate-2 hover:rotate-0 transition-all duration-500">
                   <div className="relative h-80 w-full overflow-hidden rounded-xl">
-                    <Image src="/placeholder.svg?height=600&width=600" alt="Profile" fill className="object-cover" />
+                    <Image src="/samir-portfolio-hero.png" alt="Profile" fill className="object-contain" />
                   </div>
                 </GlassCard>
                 <div className="absolute -bottom-6 -right-6">
