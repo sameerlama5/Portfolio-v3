@@ -91,7 +91,7 @@ const portfolioData = {
       tags: ["HTML5", "ACF", "JS", "GSAP", "BOOSTRAP"],
       link: "https://samridhibazaar.com",
       // github: "https://github.com",
-      featured: false,
+      featured: true,
     },
      {
       id: "2",
@@ -115,7 +115,7 @@ const portfolioData = {
       tags: ["NextJs", "MongoDb", "Tailwind"],
       // link: "https://www.amaalyask.org.np",
       github: "https://github.com/sameerlama5/Kisan-mart",
-      featured: true,
+      featured: false,
     },
   ],
 

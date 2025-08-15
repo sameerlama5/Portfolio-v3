@@ -1,19 +1,26 @@
-import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Mail, Twitter, ExternalLink } from "lucide-react"
-import ProjectCard from "@/components/project-card"
-import SkillBadge from "@/components/skill-badge"
-import ContactForm from "@/components/contact-form"
-import GlassCard from "@/components/glass-card"
-import FloatingElement from "@/components/floating-element"
-import portfolioData from "@/lib/portfolio-data"
-import ResponsiveNavbar from "@/components/responsive-navbar"
+import Image from "next/image";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  ExternalLink,
+} from "lucide-react";
+import ProjectCard from "@/components/project-card";
+import SkillBadge from "@/components/skill-badge";
+import ContactForm from "@/components/contact-form";
+import GlassCard from "@/components/glass-card";
+import FloatingElement from "@/components/floating-element";
+import portfolioData from "@/lib/portfolio-data";
+import ResponsiveNavbar from "@/components/responsive-navbar";
 
 export default function Home() {
-  const { personalInfo, projects, skills } = portfolioData
+  const { personalInfo, projects, skills } = portfolioData;
 
   // Filter featured and non-featured projects
-  const featuredProject = projects.find((project) => project.featured)
-  const otherProjects = projects.filter((project) => !project.featured)
+  const featuredProject = projects.find((project) => project.featured);
+  const otherProjects = projects.filter((project) => !project.featured);
 
   // Navigation items
   const navItems = [
@@ -22,18 +29,33 @@ export default function Home() {
     { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
     { href: "/resume", label: "Resume" },
-  ]
+  ];
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-900 via-violet-800 to-indigo-900 overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
       {/* Animated background elements */}
-      <FloatingElement className="top-20 left-20 w-72 h-72 bg-pink-500 opacity-20" delay={0} />
-      <FloatingElement className="top-40 right-20 w-72 h-72 bg-yellow-500 opacity-20" delay={2000} />
-      <FloatingElement className="-bottom-8 left-40 w-72 h-72 bg-teal-500 opacity-20" delay={4000} />
-      <FloatingElement className="top-1/3 left-1/3 w-48 h-48 bg-blue-500 opacity-15" delay={1000} />
-      <FloatingElement className="bottom-1/4 right-1/4 w-56 h-56 bg-purple-500 opacity-15" delay={3000} />
+      <FloatingElement
+        className="top-20 left-20 w-72 h-72 bg-pink-500 opacity-20"
+        delay={0}
+      />
+      <FloatingElement
+        className="top-40 right-20 w-72 h-72 bg-yellow-500 opacity-20"
+        delay={2000}
+      />
+      <FloatingElement
+        className="-bottom-8 left-40 w-72 h-72 bg-teal-500 opacity-20"
+        delay={4000}
+      />
+      <FloatingElement
+        className="top-1/3 left-1/3 w-48 h-48 bg-blue-500 opacity-15"
+        delay={1000}
+      />
+      <FloatingElement
+        className="bottom-1/4 right-1/4 w-56 h-56 bg-purple-500 opacity-15"
+        delay={3000}
+      />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         {/* Responsive Navigation */}
@@ -47,7 +69,9 @@ export default function Home() {
                 <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200 mb-6">
                   {personalInfo.title}
                 </h1>
-                <p className="text-lg md:text-xl text-white/80 mb-8">{personalInfo.bio}</p>
+                <p className="text-lg md:text-xl text-white/80 mb-8">
+                  {personalInfo.bio}
+                </p>
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="#contact"
@@ -74,7 +98,12 @@ export default function Home() {
               <div className="relative">
                 <GlassCard className="p-4 transform -rotate-2 hover:rotate-0 transition-all duration-500">
                   <div className="relative h-80 w-full overflow-hidden rounded-xl">
-                    <Image src="/samir-portfolio-hero.png" alt="Profile" fill className="object-contain" />
+                    <Image
+                      src="/samir-portfolio-hero.png"
+                      alt="Profile"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </GlassCard>
                 <div className="absolute -bottom-6 -right-6">
@@ -127,38 +156,55 @@ export default function Home() {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {featuredProject && (
-              <div className="md:col-span-8">
-                <ProjectCard
-                  title={featuredProject.title}
-                  description={featuredProject.longDescription || featuredProject.description}
-                  image={featuredProject.image}
-                  tags={featuredProject.tags}
-                  link={featuredProject.link}
-                  featured={true}
-                />
+          {(() => {
+            const featuredProject = projects.find(
+              (project) => project.featured
+            );
+            const otherProjects = projects.filter(
+              (project) => project.id !== featuredProject?.id
+            );
+
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+                {featuredProject && (
+                  <div className="md:col-span-8">
+                    <ProjectCard
+                      title={featuredProject.title}
+                      description={
+                        featuredProject.longDescription ||
+                        featuredProject.description
+                      }
+                      image={featuredProject.image}
+                      tags={featuredProject.tags}
+                      link={featuredProject.link}
+                      featured={true}
+                    />
+                  </div>
+                )}
+
+                {otherProjects.map((project, index) => {
+                  const colSpans = [
+                    "md:col-span-4",
+                    "md:col-span-5",
+                    "md:col-span-7",
+                  ];
+                  const colSpan = colSpans[index % colSpans.length];
+
+                  return (
+                    <div key={project.id} className={colSpan}>
+                      <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        image={project.image}
+                        tags={project.tags}
+                        link={project.link}
+                      />
+                    </div>
+                  );
+                })}
               </div>
-            )}
-
-            {otherProjects.map((project, index) => {
-              // Create a dynamic layout with different column spans
-              const colSpans = ["md:col-span-4", "md:col-span-5", "md:col-span-7"]
-              const colSpan = colSpans[index % colSpans.length]
-
-              return (
-                <div key={project.id} className={colSpan}>
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                    tags={project.tags}
-                    link={project.link}
-                  />
-                </div>
-              )
-            })}
-          </div>
+            );
+          })()}
         </section>
 
         {/* Skills Section - Hexagonal Grid */}
@@ -188,8 +234,9 @@ export default function Home() {
                   </span>
                 </h2>
                 <p className="text-white/80 mb-6">
-                  I'm currently available for freelance work and exciting opportunities. If you have a project that
-                  needs creative solutions, let's talk!
+                  I'm currently available for freelance work and exciting
+                  opportunities. If you have a project that needs creative
+                  solutions, let's talk!
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center text-white/80">
@@ -198,11 +245,18 @@ export default function Home() {
                   </div>
                   <div className="flex items-center text-white/80">
                     <Linkedin className="h-5 w-5 mr-3" />
-                    <span>{personalInfo.socialLinks.linkedin.replace("https://", "")}</span>
+                    <span>
+                      {personalInfo.socialLinks.linkedin.replace(
+                        "https://",
+                        ""
+                      )}
+                    </span>
                   </div>
                   <div className="flex items-center text-white/80">
                     <Github className="h-5 w-5 mr-3" />
-                    <span>{personalInfo.socialLinks.github.replace("https://", "")}</span>
+                    <span>
+                      {personalInfo.socialLinks.github.replace("https://", "")}
+                    </span>
                   </div>
                 </div>
               </GlassCard>
@@ -219,11 +273,12 @@ export default function Home() {
         <footer className="py-8 text-center text-white/60">
           <GlassCard className="p-4 inline-block">
             <p>
-              © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+              © {new Date().getFullYear()} {personalInfo.name}. All rights
+              reserved.
             </p>
           </GlassCard>
         </footer>
       </div>
     </main>
-  )
+  );
 }
