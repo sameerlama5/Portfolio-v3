@@ -58,7 +58,7 @@ export default function ResponsiveNavbar({ items, currentPath = "/" }: Responsiv
         isOpen && "rounded-2xl",
       )}
     >
-      <div className="text-white font-bold text-xl">Portfolio</div>
+      <div className="text-white font-bold text-xl">SawMeer.</div>
 
       {/* Mobile menu button */}
       <button
@@ -87,7 +87,7 @@ export default function ResponsiveNavbar({ items, currentPath = "/" }: Responsiv
 
       {/* Mobile navigation */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl py-4 px-6 md:hidden shadow-lg">
+        <div className="absolute top-full left-0 right-0 mt-2 backdrop-blur-lg bg-purple border border-white/20 rounded-2xl py-4 px-6 md:hidden shadow-lg">
           <div className="flex flex-col space-y-4">
             {items.map((item) => (
               <Link
