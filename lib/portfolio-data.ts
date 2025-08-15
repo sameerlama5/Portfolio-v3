@@ -105,6 +105,18 @@ const portfolioData = {
       // github: "https://github.com",
       featured: true,
     },
+    {
+      id: "3",
+      title: "Kisan mart",
+      description: "A modern shopping experience with React and Node.js",
+      longDescription:
+        "Support local farmers and enjoy fresh, high-quality produce delivered to your doorstep.",
+      image: "/kisanmart.png?height=400&width=600",
+      tags: ["NextJs", "MongoDb", "Tailwind"],
+      // link: "https://www.amaalyask.org.np",
+      github: "https://github.com/sameerlama5/Kisan-mart",
+      featured: true,
+    },
   ],
 
   skills: [
@@ -112,7 +124,7 @@ const portfolioData = {
     { name: "Next.js", level: 70, category: "frontend" },
     { name: "TypeScript", level: 60, category: "frontend" },
     { name: "Node.js", level: 70, category: "backend" },
-    { name: "UI/UX Design", level: 45, category: "design" },
+    { name: "Wordpress", level: 80, category: "Web Development" },
     { name: "Tailwind CSS", level: 90, category: "frontend" },
     { name: "MongoDb", level: 70, category: "backend" },
     { name: "MySql", level: 60, category: "backend" },
