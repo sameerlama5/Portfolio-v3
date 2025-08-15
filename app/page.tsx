@@ -194,7 +194,7 @@ export default function Home() {
                     <div key={project.id} className={colSpan}>
                       <ProjectCard
                         title={project.title}
-                        description={project.description}
+                        description={project.longDescription}
                         image={project.image}
                         tags={project.tags}
                         link={project.link}
