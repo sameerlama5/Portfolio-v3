@@ -9,6 +9,7 @@ interface ProjectCardProps {
   image: string
   tags: string[]
   link?: string
+  github?: string
   featured?: boolean
 }
 
@@ -18,6 +19,7 @@ export default function ProjectCard({
   image,
   tags,
   link = "#",
+  github,
   featured = false,
 }: ProjectCardProps) {
   return (
@@ -58,6 +60,7 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
+      <a className="inline-flex mt-3 backdrop-blur-md bg-transparent hover:bg-white/10 text-white px-6 py-3 rounded-full items-center transition-all border border-white/30" href={github} target="_blank"> Github</a>
       </div>
     </GlassCard>
   )

@@ -18,10 +18,6 @@ import ResponsiveNavbar from "@/components/responsive-navbar";
 export default function Home() {
   const { personalInfo, projects, skills } = portfolioData;
 
-  // Filter featured and non-featured projects
-  const featuredProject = projects.find((project) => project.featured);
-  const otherProjects = projects.filter((project) => !project.featured);
-
   // Navigation items
   const navItems = [
     { href: "#about", label: "About" },
@@ -177,6 +173,7 @@ export default function Home() {
                       image={featuredProject.image}
                       tags={featuredProject.tags}
                       link={featuredProject.link}
+                      github={featuredProject.github}
                       featured={true}
                     />
                   </div>
@@ -198,6 +195,7 @@ export default function Home() {
                         image={project.image}
                         tags={project.tags}
                         link={project.link}
+                        github={project.github}
                       />
                     </div>
                   );
