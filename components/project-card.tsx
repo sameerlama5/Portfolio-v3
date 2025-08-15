@@ -43,7 +43,7 @@ export default function ProjectCard({
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-between">
           {title}
-          <a href={link} className="opacity-0 group-hover:opacity-100 transition-opacity">
+          <a href={link} target="_blank" className="opacity-0 group-hover:opacity-100 transition-opacity">
             <ArrowUpRight className="h-5 w-5 text-purple-300" />
           </a>
         </h3>
