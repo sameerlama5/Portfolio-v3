@@ -82,28 +82,28 @@ const portfolioData = {
 
   projects: [
     {
-      id: "demo1",
-      title: "Demo",
-      description: "A modern shopping experience with React and Node.js",
-      longDescription:
-        "A comprehensive e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment processing with Stripe, inventory management, and an admin dashboard.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "https://ecommerce-example.com",
-      github: "https://github.com",
-      featured: true,
-    },
-    {
-      id: "demo2",
-      title: "Demo",
+      id: "1",
+      title: "Sambridhi Bazzar",
       description: "Analytics platform with machine learning insights",
       longDescription:
-        "A dashboard that visualizes data using machine learning algorithms to provide actionable insights. Built with Python, TensorFlow, and Next.js.",
-      image: "/placeholder.svg?height=400&width=400",
-      tags: ["Python", "TensorFlow", "Next.js", "Data Visualization"],
-      link: "https://ai-dashboard-example.com",
-      github: "https://github.com",
+        "Samridhi Bazaar is a comprehensive loan marketplace designed to connect individuals with a wide network of trusted financial institutions. ",
+      image: "/sambridhi.png?height=400&width=400",
+      tags: ["HTML5", "ACF", "JS", "GSAP", "BOOSTRAP"],
+      link: "https://samridhibazaar.com",
+      // github: "https://github.com",
       featured: false,
+    },
+     {
+      id: "2",
+      title: "Amaalya Sk FOundation",
+      description: "A modern shopping experience with React and Node.js",
+      longDescription:
+        "We are a non-profit organization dedicated to improving the standards of early childhood and primary education in Nepal. ",
+      image: "/amaalya.png?height=400&width=600",
+      tags: ["HTML5", "ACF", "JS", "GSAP", "BOOSTRAP"],
+      link: "https://www.amaalyask.org.np",
+      // github: "https://github.com",
+      featured: true,
     },
   ],
 
