@@ -74,7 +74,7 @@ const portfolioData = {
     location: "Bhaktapur, Suryabinayak",
     website: "lamasamir.com.np",
     socialLinks: {
-      github: "https://github.com/",
+      github: "https://github.com/sameerlama5",
       linkedin: "https://linkedin.com/",
       twitter: "https://twitter.com/",
     },
